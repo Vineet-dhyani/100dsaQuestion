@@ -1,12 +1,10 @@
 import java.util.*;
 public class LetterCombinatioOfPhoneNum {
     class Solution {
-        public void letterCombinations(String digits) {
+        public static  void letterCombinations(String digits) {
         List<String> ans=new ArrayList<String>();
         if(digits.length()==0){
-            for(int i = 0; i < ans.size(); i++) {   
-    System.out.print(ans.get(i));
-}   
+            System.out.println(Arrays.toString(ans)); 
         }
         HashMap<Character,String> hm=new HashMap<>();
         hm.put('2',"abc");
@@ -20,12 +18,10 @@ public class LetterCombinatioOfPhoneNum {
             
             backtrack(digits,0,hm,new StringBuilder(),ans);
             
-             for(int i = 0; i < ans.size(); i++) {   
-    System.out.print(ans.get(i));
-}   
+            System.out.println(Arrays.toString(ans)); 
         }
         
-        private void backtrack(String digits,int i,HashMap<Character,String> hm,StringBuilder sb,List<String> ans){
+        private static void backtrack(String digits,int i,HashMap<Character,String> hm,StringBuilder sb,List<String> ans){
             if(i==digits.length()){
                 ans.add(sb.toString());
                 return;
@@ -40,8 +36,7 @@ public class LetterCombinatioOfPhoneNum {
         }
     }
     public static void main(String[] args) {
-        LetterCombinatioOfPhoneNum  obj=new LetterCombinatioOfPhoneNum();
-        String digits = "23";
-       obj.letterCombinations(digits);
+        int digits = "23";
+        letterCombinations(digits);
     }
 }
